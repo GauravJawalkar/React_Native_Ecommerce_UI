@@ -8,9 +8,9 @@ module.exports = {
       fontFamily: {
         "inter-light": ["Inter-Light"],
         "inter-light": ["Inter-ExtraLight"],
-        inter: ["Inter-Regular"],
+        "inter": ["Inter-Regular"],
         "inter-normal": ["Inter-Medium"],
-        "inter-bold": ["Inter-Bold"],
+        "inter-bold": ["Inter_24pt-Bold"],
         "inter-semibold": ["Inter-SemiBold"],
         "inter-extrabold": ["Inter-ExtraBold"],
       }

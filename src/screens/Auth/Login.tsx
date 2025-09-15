@@ -1,11 +1,19 @@
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { NativeStackScreenProps } from '@react-navigation/native-stack'
+import { RootStackParamList } from '../../App'
 
-const Login = () => {
+type LoginScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>
+
+const Login = ({ navigation }: LoginScreenProps) => {
     return (
-        <View>
+        <SafeAreaView >
             <Text>Login Screen</Text>
-        </View>
+            <TouchableOpacity onPress={() => { navigation.navigate("SignupScreen") }}>
+                <Text>SignUp</Text>
+            </TouchableOpacity>
+        </SafeAreaView>
     )
 }
 

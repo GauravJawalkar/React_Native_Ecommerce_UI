@@ -17,7 +17,7 @@ const Login = ({ navigation }: LoginScreenProps) => {
     return (
         <SafeAreaView className='p-5'>
             <View>
-                <View className='pt-5'>
+                <View className='pt-3'>
                     <Pressable onPress={() => navigation.navigate('GetStartedScreen')}>
                         <ArrowLeft size={25} />
                     </Pressable>

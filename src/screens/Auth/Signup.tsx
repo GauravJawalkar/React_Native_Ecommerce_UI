@@ -1,7 +1,7 @@
-import { View, Text, Pressable } from 'react-native'
+import { View, Text, Pressable, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { ArrowLeft } from 'lucide-react-native'
+import { AppleIcon, ArrowLeft } from 'lucide-react-native'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../../App'
 
@@ -15,7 +15,17 @@ const Signup = ({ navigation }: SignUpScreenProps) => {
                     <ArrowLeft size={25} />
                 </Pressable>
             </View>
-        </SafeAreaView>
+            <View>
+                <TouchableOpacity className='flex flex-row gap-4 items-center justify-center py-3 border border-gray-300 rounded-lg'>
+                    <Text>
+                        <AppleIcon />
+                    </Text>
+                    <Text className='font-bold text-lg'>
+                        Sign in with Google
+                    </Text>
+                </TouchableOpacity>
+            </View>
+        </SafeAreaView >
     )
 }
 

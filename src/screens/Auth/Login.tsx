@@ -6,6 +6,7 @@ import { RootStackParamList } from '../../App'
 import { ArrowLeft, Eye, EyeOff } from 'lucide-react-native'
 import GoogleIcon from '../../components/Icons/GoogleIcon'
 import AppleIcon from '../../components/Icons/AppleIcon'
+import Title from '../../components/Reusables/Title'
 
 type LoginScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>
 
@@ -23,7 +24,7 @@ const Login = ({ navigation }: LoginScreenProps) => {
                     </Pressable>
                 </View>
                 <View className='py-10'>
-                    <Text className='font-bold text-3xl pb-2'>Welcome Back 👋</Text>
+                    <Title title='Welcome Back 👋' />
                     <Text className='text-gray-500'>Login In Your Account</Text>
                 </View>
                 <View className='flex flex-col gap-4'>
@@ -79,7 +80,7 @@ const Login = ({ navigation }: LoginScreenProps) => {
                             <AppleIcon />
                         </Text>
                         <Text className='font-bold text-lg'>
-                            Sign in with Google
+                            Sign in with Apple
                         </Text>
                     </TouchableOpacity>
                 </View>

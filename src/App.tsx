@@ -5,12 +5,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Login from './screens/Auth/Login';
 import Signup from './screens/Auth/Signup';
 import ForgotPassword from './screens/Auth/ForgotPassword';
+import TermsCondition from './screens/Terms&Conditions/TermsCondition';
 
 export type RootStackParamList = {
   GetStartedScreen: undefined;
   LoginScreen: undefined;
   SignupScreen: undefined;
   ForgotPasswordScreen: undefined;
+  TermsConditionScreen: undefined;
 }
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -23,6 +25,7 @@ const App = () => {
         <Stack.Screen name='LoginScreen' component={Login} options={{ headerShown: false }} />
         <Stack.Screen name='SignupScreen' component={Signup} options={{ headerShown: false }} />
         <Stack.Screen name='ForgotPasswordScreen' component={ForgotPassword} options={{ headerShown: false }} />
+        <Stack.Screen name='TermsConditionScreen' component={TermsCondition} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   )

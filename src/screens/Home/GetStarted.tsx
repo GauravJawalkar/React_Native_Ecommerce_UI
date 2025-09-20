@@ -10,7 +10,7 @@ type GetStartedScreenProps = NativeStackScreenProps<RootStackParamList, 'GetStar
 const GetStartedScreen = ({ navigation }: GetStartedScreenProps) => {
     return (
         <>
-            <StatusBar className='bg-green-900' />
+            <StatusBar className='bg-green-900' barStyle={'light-content'} />
             <SafeAreaView className='h-screen bg-green-900 p-4 '>
                 <View className='flex-1 justify-center items-center gap-5'>
                     <Sprout size={70} fill={"teal"} color={"white"} />

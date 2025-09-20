@@ -5,6 +5,7 @@ import { ArrowLeft, Eye, EyeOff } from 'lucide-react-native'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../../App'
 import Title from '../../components/Reusables/Title'
+import Button from '../../components/Reusables/Button'
 
 type SignUpScreenProps = NativeStackScreenProps<RootStackParamList, 'SignupScreen'>
 
@@ -57,10 +58,8 @@ const Signup = ({ navigation }: SignUpScreenProps) => {
 
                         {/* Register Button */}
                         <View className="py-4">
-                            <TouchableOpacity className="bg-green-800/80 py-3 rounded-lg">
-                                <Text className="text-center font-bold text-white text-xl">
-                                    Register
-                                </Text>
+                            <TouchableOpacity>
+                                <Button name='Sign Up' />
                             </TouchableOpacity>
                         </View>
 

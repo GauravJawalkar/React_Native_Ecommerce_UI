@@ -20,12 +20,12 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='GetStartedScreen'>
-        <Stack.Screen name='GetStartedScreen' component={GetStartedScreen} options={{ headerShown: false }} />
-        <Stack.Screen name='LoginScreen' component={Login} options={{ headerShown: false }} />
-        <Stack.Screen name='SignupScreen' component={Signup} options={{ headerShown: false }} />
-        <Stack.Screen name='ForgotPasswordScreen' component={ForgotPassword} options={{ headerShown: false }} />
-        <Stack.Screen name='TermsConditionScreen' component={TermsCondition} options={{ headerShown: false }} />
+      <Stack.Navigator initialRouteName='GetStartedScreen' screenOptions={{ headerShown: false }}>
+        <Stack.Screen name='GetStartedScreen' component={GetStartedScreen} />
+        <Stack.Screen name='LoginScreen' component={Login} />
+        <Stack.Screen name='SignupScreen' component={Signup} />
+        <Stack.Screen name='ForgotPasswordScreen' component={ForgotPassword} />
+        <Stack.Screen name='TermsConditionScreen' component={TermsCondition} />
       </Stack.Navigator>
     </NavigationContainer>
   )

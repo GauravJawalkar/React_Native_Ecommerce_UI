@@ -6,6 +6,7 @@ import Login from './screens/Auth/Login';
 import Signup from './screens/Auth/Signup';
 import ForgotPassword from './screens/Auth/ForgotPassword';
 import TermsCondition from './screens/Terms&Conditions/TermsCondition';
+import Verification from './screens/Auth/Verification';
 
 export type RootStackParamList = {
   GetStartedScreen: undefined;
@@ -13,6 +14,7 @@ export type RootStackParamList = {
   SignupScreen: undefined;
   ForgotPasswordScreen: undefined;
   TermsConditionScreen: undefined;
+  VerificationScreen: { verificationMode: string };
 }
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -26,6 +28,7 @@ const App = () => {
         <Stack.Screen name='SignupScreen' component={Signup} />
         <Stack.Screen name='ForgotPasswordScreen' component={ForgotPassword} />
         <Stack.Screen name='TermsConditionScreen' component={TermsCondition} />
+        <Stack.Screen name='VerificationScreen' component={Verification} />
       </Stack.Navigator>
     </NavigationContainer>
   )

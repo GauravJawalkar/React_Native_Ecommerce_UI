@@ -58,7 +58,7 @@ const Signup = ({ navigation }: SignUpScreenProps) => {
 
                         {/* Register Button */}
                         <View className="py-4">
-                            <TouchableOpacity>
+                            <TouchableOpacity activeOpacity={0.8}>
                                 <Button name='Sign Up' />
                             </TouchableOpacity>
                         </View>

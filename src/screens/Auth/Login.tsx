@@ -49,7 +49,7 @@ const Login = ({ navigation }: LoginScreenProps) => {
                             <Pressable onPress={() => { navigation.navigate('ForgotPasswordScreen') }} ><Text className='font-bold text-green-800 text-lg'>Forgot Password?</Text></Pressable>
                         </View>
                         <View className='py-4'>
-                            <TouchableOpacity>
+                            <TouchableOpacity activeOpacity={0.8}>
                                 <Button name='Login' />
                             </TouchableOpacity>
                         </View>
@@ -68,7 +68,7 @@ const Login = ({ navigation }: LoginScreenProps) => {
                         </View>
                     </View>
                     <View className='flex gap-2'>
-                        <TouchableOpacity className='flex flex-row gap-4 items-center justify-center py-3 border border-gray-300 rounded-lg'>
+                        <TouchableOpacity activeOpacity={0.6} className='flex flex-row gap-4 items-center justify-center py-3 border border-gray-300 rounded-lg'>
                             <Text>
                                 <GoogleIcon />
                             </Text>
@@ -76,7 +76,7 @@ const Login = ({ navigation }: LoginScreenProps) => {
                                 Sign in with Google
                             </Text>
                         </TouchableOpacity>
-                        <TouchableOpacity className='flex flex-row gap-4 items-center justify-center py-3 border border-gray-300 rounded-lg'>
+                        <TouchableOpacity activeOpacity={0.6} className='flex flex-row gap-4 items-center justify-center py-3 border border-gray-300 rounded-lg'>
                             <Text>
                                 <AppleIcon />
                             </Text>

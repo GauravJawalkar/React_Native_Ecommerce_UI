@@ -8,8 +8,9 @@ import ForgotPassword from './screens/Auth/ForgotPassword';
 import TermsCondition from './screens/Terms&Conditions/TermsCondition';
 import Verification from './screens/Auth/Verification';
 import { Provider } from 'react-redux';
-import { store } from './lib/redux/store';
+import { persistor, store } from './lib/redux/store';
 import { ReactQueryProvider } from './lib/query/Provider';
+import { PersistGate } from 'redux-persist/integration/react';
 
 
 export type RootStackParamList = {
@@ -27,16 +28,18 @@ const App = () => {
   return (
     <ReactQueryProvider>
       <Provider store={store}>
-        <NavigationContainer>
-          <Stack.Navigator initialRouteName='GetStartedScreen' screenOptions={{ headerShown: false }}>
-            <Stack.Screen name='GetStartedScreen' component={GetStartedScreen} />
-            <Stack.Screen name='LoginScreen' component={Login} />
-            <Stack.Screen name='SignupScreen' component={Signup} />
-            <Stack.Screen name='ForgotPasswordScreen' component={ForgotPassword} />
-            <Stack.Screen name='TermsConditionScreen' component={TermsCondition} />
-            <Stack.Screen name='VerificationScreen' component={Verification} />
-          </Stack.Navigator>
-        </NavigationContainer>
+        <PersistGate loading={null} persistor={persistor}>
+          <NavigationContainer>
+            <Stack.Navigator initialRouteName='GetStartedScreen' screenOptions={{ headerShown: false }}>
+              <Stack.Screen name='GetStartedScreen' component={GetStartedScreen} />
+              <Stack.Screen name='LoginScreen' component={Login} />
+              <Stack.Screen name='SignupScreen' component={Signup} />
+              <Stack.Screen name='ForgotPasswordScreen' component={ForgotPassword} />
+              <Stack.Screen name='TermsConditionScreen' component={TermsCondition} />
+              <Stack.Screen name='VerificationScreen' component={Verification} />
+            </Stack.Navigator>
+          </NavigationContainer>
+        </PersistGate>
       </Provider>
     </ReactQueryProvider>
   )

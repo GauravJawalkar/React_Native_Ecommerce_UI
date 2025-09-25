@@ -20,7 +20,7 @@ export const store = configureStore({
     reducer: persistedReducer,
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
-            serializableCheck: false, // redux-persist needs this off
+            serializableCheck: false,
         }),
 });
 

@@ -4,10 +4,14 @@ import { Sprout, TreePalm } from 'lucide-react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../../App'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../lib/redux/store'
 
 type GetStartedScreenProps = NativeStackScreenProps<RootStackParamList, 'GetStartedScreen'>
 
 const GetStartedScreen = ({ navigation }: GetStartedScreenProps) => {
+    const userDetails = useSelector((state: RootState) => state.auth.user);
+    console.log("The userDetails are :", userDetails);
     return (
         <>
             <StatusBar className='bg-green-900' barStyle={'light-content'} />

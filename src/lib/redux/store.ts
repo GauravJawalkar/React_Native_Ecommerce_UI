@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from './slices/couterSlice';
+import authReducer from './slices/authSlice';
 import { persistStore, persistReducer } from 'redux-persist';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { combineReducers } from "@reduxjs/toolkit";
@@ -7,11 +8,12 @@ import { combineReducers } from "@reduxjs/toolkit";
 const persistConfig = {
     key: 'root',
     storage: AsyncStorage,
-    whitelist: ['counter'],
+    whitelist: ['counter', 'auth'],
 }
 
 const rootReducer = combineReducers({
     counter: counterReducer,
+    auth: authReducer
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

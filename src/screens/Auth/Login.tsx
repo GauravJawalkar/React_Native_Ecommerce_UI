@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, TextInput, Pressable, StatusBar } from 'react-native'
+import { View, Text, TouchableOpacity, TextInput, Pressable, StatusBar, Alert } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
@@ -8,13 +8,31 @@ import GoogleIcon from '../../components/Icons/GoogleIcon'
 import AppleIcon from '../../components/Icons/AppleIcon'
 import Title from '../../components/Reusables/Title'
 import Button from '../../components/Reusables/Button'
+import { useDispatch, useSelector } from 'react-redux'
+import { login } from '../../lib/redux/slices/authSlice'
+import { RootState } from '../../lib/redux/store'
 
 type LoginScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>
 
 const Login = ({ navigation }: LoginScreenProps) => {
-    const [showPassword, setShowPassword] = useState(true)
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(true);
+    const dispatch = useDispatch();
+
     const handelShowPassword = () => {
         setShowPassword((prev) => !prev);
+    }
+
+    const handelLogin = () => {
+        try {
+            (email.trim() === "" || password.trim() === "") && Alert.alert("Bhai Chutiya Samja hai kya ?");
+            const payload = { user: { email, password }, isLoggedIn: true };
+            dispatch(login(payload));
+            navigation.replace("GetStartedScreen");
+        } catch (error) {
+            console.error("Failed to login : ", error)
+        }
     }
     return (
         <>
@@ -33,14 +51,14 @@ const Login = ({ navigation }: LoginScreenProps) => {
                     <View className='flex flex-col gap-4'>
                         <View>
                             <Text className='text-lg font-semibold'>Email</Text>
-                            <TextInput className='bg-gray-200 p-4 my-2 rounded-lg' placeholder='Enter Your Email' keyboardType='email-address' />
+                            <TextInput value={email} onChangeText={text => setEmail(text)} autoCapitalize='none' className='bg-gray-200 p-4 my-2 rounded-lg' placeholder='Enter Your Email' keyboardType='email-address' />
                         </View>
                         <View>
                             <Text className='text-lg font-semibold'>Password</Text>
                             <View className='relative'>
-                                <TextInput className='bg-gray-200 p-4 my-2 rounded-lg' placeholder='Enter Your Password'
+                                <TextInput value={password} onChangeText={text => setPassword(text)} className='bg-gray-200 p-4 my-2 rounded-lg' placeholder='Enter Your Password'
                                     secureTextEntry={showPassword} />
-                                <Pressable onPress={handelShowPassword} className='w-fit absolute right-4 top-1/2 -translate-x-1/2 -translate-y-1/2 '>
+                                <Pressable onPress={handelShowPassword} className='w-fit absolute right-0 top-1/2 -translate-x-1/2 -translate-y-1/2 '>
                                     {showPassword ? <EyeOff /> : <Eye />}
                                 </Pressable>
                             </View>
@@ -49,7 +67,7 @@ const Login = ({ navigation }: LoginScreenProps) => {
                             <Pressable onPress={() => { navigation.navigate('ForgotPasswordScreen') }} ><Text className='font-bold text-green-800 text-lg'>Forgot Password?</Text></Pressable>
                         </View>
                         <View className='py-4'>
-                            <TouchableOpacity activeOpacity={0.8}>
+                            <TouchableOpacity disabled={email.trim() === "" || password.trim() === ""} className='disabled:opacity-70' onPress={handelLogin} activeOpacity={0.8}>
                                 <Button name='Login' />
                             </TouchableOpacity>
                         </View>

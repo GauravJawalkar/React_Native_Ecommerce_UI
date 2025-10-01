@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 import { persistor, store } from './lib/redux/store';
 import { ReactQueryProvider } from './lib/query/Provider';
 import { PersistGate } from 'redux-persist/integration/react';
+import MainHome from './screens/Home/MainHome';
 
 
 export type RootStackParamList = {
@@ -20,6 +21,7 @@ export type RootStackParamList = {
   ForgotPasswordScreen: undefined;
   TermsConditionScreen: undefined;
   VerificationScreen: { verificationMode: string };
+  MainHomeScreen:undefined
 }
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -37,6 +39,7 @@ const App = () => {
               <Stack.Screen name='ForgotPasswordScreen' component={ForgotPassword} />
               <Stack.Screen name='TermsConditionScreen' component={TermsCondition} />
               <Stack.Screen name='VerificationScreen' component={Verification} />
+              <Stack.Screen name='MainHomeScreen' component={MainHome} />
             </Stack.Navigator>
           </NavigationContainer>
         </PersistGate>

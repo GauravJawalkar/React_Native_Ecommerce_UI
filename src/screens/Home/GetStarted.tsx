@@ -16,7 +16,7 @@ const GetStartedScreen = ({ navigation }: GetStartedScreenProps) => {
                     <Sprout size={70} fill={"teal"} color={"white"} />
                     <Text className='text-4xl text-white font-bold'>Ecco_Marketplace</Text>
                 </View>
-                <TouchableOpacity onPress={() => { navigation.navigate("LoginScreen") }} activeOpacity={0.8} className='mb-5'>
+                <TouchableOpacity onPress={() => { navigation.navigate("MainHomeScreen") }} activeOpacity={0.8} className='mb-5'>
                     <Text className='capitalize font-semibold border text-green-800 bg-white py-3 px-4 rounded-lg text-center text-lg'>
                         Get Started
                     </Text>

@@ -12,6 +12,7 @@ import { persistor, store } from './lib/redux/store';
 import { ReactQueryProvider } from './lib/query/Provider';
 import { PersistGate } from 'redux-persist/integration/react';
 import MainHome from './screens/Home/MainHome';
+import Cart from './screens/Cart/Cart';
 
 
 export type RootStackParamList = {
@@ -21,7 +22,8 @@ export type RootStackParamList = {
   ForgotPasswordScreen: undefined;
   TermsConditionScreen: undefined;
   VerificationScreen: { verificationMode: string };
-  MainHomeScreen:undefined
+  MainHomeScreen: undefined;
+  CartScreen: undefined
 }
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -32,7 +34,7 @@ const App = () => {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <NavigationContainer>
-            <Stack.Navigator initialRouteName='GetStartedScreen' screenOptions={{ headerShown: false }}>
+            <Stack.Navigator initialRouteName='MainHomeScreen' screenOptions={{ headerShown: false }}>
               <Stack.Screen name='GetStartedScreen' component={GetStartedScreen} />
               <Stack.Screen name='LoginScreen' component={Login} />
               <Stack.Screen name='SignupScreen' component={Signup} />
@@ -40,6 +42,7 @@ const App = () => {
               <Stack.Screen name='TermsConditionScreen' component={TermsCondition} />
               <Stack.Screen name='VerificationScreen' component={Verification} />
               <Stack.Screen name='MainHomeScreen' component={MainHome} />
+              <Stack.Screen name='CartScreen' component={Cart} />
             </Stack.Navigator>
           </NavigationContainer>
         </PersistGate>

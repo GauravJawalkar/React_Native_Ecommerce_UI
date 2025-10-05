@@ -1,9 +1,9 @@
-import { View, Text, StatusBar, TouchableOpacity } from 'react-native'
+import { View, Text, StatusBar, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../../App'
 import MainSearchBar from '../../components/ScreenWiseComponents/HomeScreen/MainSearchBar'
-import { LocateIcon, LocationEdit, MapPin, MapPinMinusInside, MapPinned, ShoppingCartIcon } from 'lucide-react-native'
+import { ChevronDown, MapPin, ShoppingCartIcon } from 'lucide-react-native'
 import SpecialForYou from '../../components/ScreenWiseComponents/HomeScreen/SpecialForYou'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
@@ -19,6 +19,7 @@ const MainHome = ({ navigation }: MainHomeProps) => {
                         <View className='flex flex-row items-center justify-start gap-2 py-2'>
                             <MapPin stroke={'white'} />
                             <Text className='text-white text-lg font-medium'>On Earth, Maharashtra</Text>
+                            <ChevronDown color={'white'} size={20}/>
                         </View>
                         <TouchableOpacity onPress={() => navigation.navigate('CartScreen')} className='p-3 border rounded-full border-gray-300 relative bg-white'>
                             <View>
@@ -32,10 +33,9 @@ const MainHome = ({ navigation }: MainHomeProps) => {
                     <MainSearchBar />
                 </View>
             </SafeAreaView>
-                <View className='p-5'>
-                    <SpecialForYou />
-                </View>
             <View className='p-5'>
+                <SpecialForYou />
+                
             </View>
         </>
     )

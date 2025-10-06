@@ -8,9 +8,8 @@ import GoogleIcon from '../../components/Icons/GoogleIcon'
 import AppleIcon from '../../components/Icons/AppleIcon'
 import Title from '../../components/Reusables/Title'
 import Button from '../../components/Reusables/Button'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { login } from '../../lib/redux/slices/authSlice'
-import { RootState } from '../../lib/redux/store'
 
 type LoginScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>
 

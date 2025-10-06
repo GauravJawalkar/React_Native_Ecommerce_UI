@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Text, Image, ScrollView } from 'react-native'
 import React from 'react'
 
 const SpecialForYou = () => {
@@ -16,7 +16,7 @@ const SpecialForYou = () => {
                     <Image source={require('../../../assets/HomeBanners/Banner5.jpg')} className='h-full w-full object-contain rounded-3xl shadow-lg' />
                     <Text className='absolute text-black bg-white py-1 px-3 rounded-full text-sm top-2.5 left-2.5'>Limited time!</Text>
                 </View>
-                <View className='h-[150px] w-[300px] object-contain relative mr-5'>
+                <View className='h-[150px] w-[300px] object-contain relative pr-5 mr-5'>
                     <Image source={require('../../../assets/HomeBanners/Banner3.jpg')} className='h-full w-full object-contain rounded-3xl shadow-lg' />
                     <Text className='absolute text-black bg-white py-1 px-3 rounded-full text-sm top-2.5 left-2.5'>Limited time!</Text>
                 </View>

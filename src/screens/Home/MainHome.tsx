@@ -7,6 +7,7 @@ import { ChevronDown, MapPin, ShoppingCartIcon } from 'lucide-react-native'
 import SpecialForYou from '../../components/ScreenWiseComponents/HomeScreen/SpecialForYou'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Category from '../../components/ScreenWiseComponents/HomeScreen/Category'
+import SaleTime from '../../components/ScreenWiseComponents/HomeScreen/SaleTime'
 
 type MainHomeProps = NativeStackScreenProps<RootStackParamList, 'MainHomeScreen'>
 
@@ -37,6 +38,7 @@ const MainHome = ({ navigation }: MainHomeProps) => {
             <View className='p-5'>
                 <SpecialForYou />
                 <Category />
+                <SaleTime />
             </View>
         </>
     )

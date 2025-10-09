@@ -1,18 +1,64 @@
-import { View, Text, ScrollView, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity, FlatList } from 'react-native'
 import React from 'react'
 
+interface topWeekData {
+    id: number,
+    image: any,
+    title: string,
+    price: number
+}
+
 const TopOfWeek = () => {
+    const data = [
+        {
+            id: 1,
+            image: require('../../../assets/Test/alovera.png'),
+            title: 'Magical Aloe Vera Plant',
+            price: 250
+        },
+        {
+            id: 2,
+            image: require('../../../assets/Test/alovera.png'),
+            title: 'Aloe Vera Magical Plant',
+            price: 350
+        },
+        {
+            id: 3,
+            image: require('../../../assets/Test/alovera.png'),
+            title: 'Vera Plant Magical Aloe ',
+            price: 450
+        },
+    ]
+
+    const productCard = ({ item }: { item: topWeekData }) => {
+        return (
+            <TouchableOpacity activeOpacity={0.6}>
+                <View className='bg-gray-200 rounded-2xl mr-5 h-[170px] w-[140px]'>
+                    <Image source={item?.image} className='w-full h-full object-contain' />
+                </View>
+                <View className='w-[140px] my-2'>
+                    <Text numberOfLines={1} className='font-semibold text-lg truncate w-full'>{item?.title}</Text>
+                    <Text className='text-xl font-bold text-green-800'>₹ {item?.price}</Text>
+                </View>
+            </TouchableOpacity>
+        )
+    }
+
     return (
         <View>
             <View className='py-2'>
                 <Text className='text-2xl font-semibold'>Top of Week</Text>
             </View>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                {/* Product card */}
-                <View>
-                    <Image source={require('../../../assets/Test/alovera.png')} height={300} width={200} className='h-[300px] w-[200px]' />
-                </View>
-            </ScrollView>
+            <View>
+                <FlatList
+                    className='pl-5 -mx-5 py-4'
+                    data={data}
+                    keyExtractor={(product) => product?.id.toString()}
+                    renderItem={productCard}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                />
+            </View>
         </View>
     )
 }

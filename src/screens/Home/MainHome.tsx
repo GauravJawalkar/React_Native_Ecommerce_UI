@@ -7,10 +7,14 @@ import { ChevronDown, MapPin, ShoppingCartIcon } from 'lucide-react-native'
 import SpecialForYou from '../../components/ScreenWiseComponents/HomeScreen/SpecialForYou'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Category from '../../components/ScreenWiseComponents/HomeScreen/Category'
-import SaleTime from '../../components/ScreenWiseComponents/HomeScreen/SaleTime'
 import TopOfWeek from '../../components/ScreenWiseComponents/HomeScreen/TopOfWeek'
+import { BottomTabScreenProps } from '@react-navigation/bottom-tabs'
+import { BottomTabParamList } from '../../components/Navigation/BottomBarTab'
+import { CompositeScreenProps } from '@react-navigation/native'
 
-type MainHomeProps = NativeStackScreenProps<RootStackParamList, 'MainHomeScreen'>
+type CombinedProps = CompositeScreenProps<BottomTabScreenProps<BottomTabParamList, 'Home'>, NativeStackScreenProps<RootStackParamList>>;
+
+export type MainHomeProps = CombinedProps;
 
 const MainHome = ({ navigation }: MainHomeProps) => {
     return (
@@ -25,7 +29,7 @@ const MainHome = ({ navigation }: MainHomeProps) => {
                                 <Text className='text-white text-lg font-medium'>On Earth, Maharashtra</Text>
                                 <ChevronDown color={'white'} size={20} />
                             </View>
-                            <TouchableOpacity onPress={() => navigation.navigate('CartScreen')} className='p-3 border rounded-full border-gray-300 relative bg-white'>
+                            <TouchableOpacity onPress={() => navigation.navigate('Cart')} className='p-3 border rounded-full border-gray-300 relative bg-white'>
                                 <View>
                                     <ShoppingCartIcon color={'green'} />
                                 </View>

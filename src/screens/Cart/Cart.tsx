@@ -3,9 +3,9 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ArrowLeft } from 'lucide-react-native'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
-import { RootStackParamList } from '../../App'
+import { BottomTabParamList } from '../../components/Navigation/BottomBarTab'
 
-type CartScreeProps = NativeStackScreenProps<RootStackParamList, 'CartScreen'>
+type CartScreeProps = NativeStackScreenProps<BottomTabParamList, 'Cart'>
 
 const Cart = ({ navigation }: CartScreeProps) => {
     return (

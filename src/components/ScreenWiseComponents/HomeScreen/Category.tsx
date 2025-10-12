@@ -53,14 +53,14 @@ const Category = () => {
                 <View className='p-1 rounded-full bg-gray-300 w-fit'>
                     <Image source={item.imageLink} className='w-24 h-24 rounded-full' />
                 </View>
-                <Text className='text-base font-medium mt-1 capitalize text-center'>{item.category}</Text>
+                <Text className='text-base font-medium mt-1 capitalize text-center text-neutral-600'>{item.category}</Text>
             </TouchableOpacity>
         )
     }
 
     return (
         <View className='py-3'>
-            <Text className='text-2xl font-semibold text-black'>Category</Text>
+            <Text className='text-2xl font-semibold text-neutral-700'>Category</Text>
             <View className='py-4'>
                 <FlatList
                     className='pl-5 -mx-5'

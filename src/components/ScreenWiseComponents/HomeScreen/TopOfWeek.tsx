@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity, FlatList } from 'react-native'
+import { View, Text, Image, TouchableOpacity, FlatList, Pressable } from 'react-native'
 import React from 'react'
 
 interface topWeekData {
@@ -46,8 +46,9 @@ const TopOfWeek = () => {
 
     return (
         <View>
-            <View className='py-2'>
-                <Text className='text-2xl font-semibold'>Top of Week</Text>
+            <View className='py-3 flex flex-row items-center justify-between'>
+                <Text className='text-2xl font-semibold text-neutral-700'>Top of the week</Text>
+                <Pressable><Text className='text-neutral-700'>See More</Text></Pressable>
             </View>
             <View>
                 <FlatList

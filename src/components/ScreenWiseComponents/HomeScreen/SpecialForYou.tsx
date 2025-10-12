@@ -5,7 +5,7 @@ const SpecialForYou = () => {
     return (
         <View>
             <View>
-                <Text className='text-2xl font-semibold'>#SpecialForYou</Text>
+                <Text className='text-2xl font-semibold text-neutral-700'>#SpecialForYou</Text>
             </View>
             <ScrollView horizontal={true} className='flex flex-row gap-2 py-5 pl-5 -mx-5' showsHorizontalScrollIndicator={false}>
                 <View className='h-[150px] w-[300px] object-contain relative mr-5'>

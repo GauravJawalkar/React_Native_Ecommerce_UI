@@ -30,9 +30,10 @@ const TopOfWeek = () => {
         },
     ]
 
-    const productCard = ({ item }: { item: topWeekData }) => {
+    const productCard = ({ item, index }: { item: topWeekData, index: number }) => {
+        const isLast = index === data?.length - 1;
         return (
-            <TouchableOpacity activeOpacity={0.6}>
+            <TouchableOpacity activeOpacity={0.6} className={`${isLast && 'mr-4'}`}>
                 <View className='bg-gray-200 rounded-2xl mr-5 h-[170px] w-[140px]'>
                     <Image source={item?.image} className='w-full h-full object-contain' />
                 </View>

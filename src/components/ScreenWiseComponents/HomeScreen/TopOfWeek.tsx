@@ -35,13 +35,13 @@ const TopOfWeek = () => {
         const isLast = index === data?.length - 1;
         return (
             <TouchableOpacity activeOpacity={0.6} className={`${isLast && 'mr-4'}`}>
-                <View className='bg-gray-200 rounded-2xl mr-5 h-[170px] w-[140px]'>
+                <View className='bg-gray-200 rounded-2xl mr-6 h-[170px] w-[140px]'>
                     <Image source={item?.image} className='w-full h-full object-contain' />
                 </View>
                 <View className='w-[140px] my-2'>
                     <Text numberOfLines={1} className='font-semibold text-lg truncate w-full'>{item?.title}</Text>
                     {/* Rating */}
-                    <View className='flex flex-row items-center justify-start gap-5 py-1'>
+                    <View className='flex flex-row items-center justify-between py-1'>
                         <View>
                             <View className='font-semibold flex items-center flex-row gap-1 '>
                                 <Star color={'#FFBF00'} fill={'#FFBF00'} size={17} />
@@ -49,7 +49,7 @@ const TopOfWeek = () => {
                             </View>
                         </View>
                         <View>
-                            <Text className='text-sm'>(200 Reviews)</Text>
+                            <Text numberOfLines={1} ellipsizeMode='tail' className='text-sm max-w-[80px] font-medium text-gray-500/80'>(243 Reviews)</Text>
                         </View>
                     </View>
                     <Text className='text-xl font-bold text-green-800'>₹ {item?.price}</Text>

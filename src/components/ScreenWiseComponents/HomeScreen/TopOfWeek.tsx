@@ -1,5 +1,6 @@
 import { View, Text, Image, TouchableOpacity, FlatList, Pressable } from 'react-native'
 import React from 'react'
+import { Star } from 'lucide-react-native'
 
 interface topWeekData {
     id: number,
@@ -39,9 +40,21 @@ const TopOfWeek = () => {
                 </View>
                 <View className='w-[140px] my-2'>
                     <Text numberOfLines={1} className='font-semibold text-lg truncate w-full'>{item?.title}</Text>
+                    {/* Rating */}
+                    <View className='flex flex-row items-center justify-start gap-5 py-1'>
+                        <View>
+                            <View className='font-semibold flex items-center flex-row gap-1 '>
+                                <Star color={'#FFBF00'} fill={'#FFBF00'} size={17} />
+                                <Text className='font-semibold'>4.9</Text>
+                            </View>
+                        </View>
+                        <View>
+                            <Text className='text-sm'>(200 Reviews)</Text>
+                        </View>
+                    </View>
                     <Text className='text-xl font-bold text-green-800'>₹ {item?.price}</Text>
                 </View>
-            </TouchableOpacity>
+            </TouchableOpacity >
         )
     }
 

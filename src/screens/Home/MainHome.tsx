@@ -21,9 +21,9 @@ const MainHome = ({ navigation }: MainHomeProps) => {
     return (
         <>
             <StatusBar className='bg-green-800' barStyle={'light-content'} />
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <SafeAreaView className='p-5 bg-green-800 rounded-b-3xl'>
-                    <View className='py-4 flex flex-row items-center gap-5'>
+            <ScrollView stickyHeaderIndices={[0]} showsVerticalScrollIndicator={false}>
+                <SafeAreaView className='py-4 px-5 bg-green-800 rounded-b-3xl'>
+                    <View className='py-4 flex flex-row items-center justify-center gap-5'>
                         <View className='w-[80%]'>
                             <MainSearchBar />
                         </View>

@@ -29,7 +29,7 @@ const BottomBarTab = () => {
                 tabBarActiveTintColor: '#006400',
                 tabBarInactiveTintColor: '#a0a0a0',
                 tabBarLabelStyle: { fontSize: 12, fontWeight: '600', marginBottom: 5, },
-                tabBarStyle: { paddingTop: 7, height: 60, borderTopRightRadius: 25, borderTopLeftRadius: 25, backgroundColor: '#f9fafb' },
+                tabBarStyle: { paddingTop: 7, height: 60, borderTopRightRadius: 24, borderTopLeftRadius: 24, backgroundColor: '#f9fafb' },
                 tabBarIcon: ({ focused }) => {
                     let iconColor = focused ? 'green' : 'gray'
                     let iconSize = 24

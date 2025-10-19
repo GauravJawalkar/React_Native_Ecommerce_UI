@@ -9,6 +9,7 @@ interface topWeekData {
     price: number
 }
 
+
 const TopOfWeek = () => {
     const data = [
         {

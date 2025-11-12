@@ -1,11 +1,8 @@
 import { View, Text, Pressable, Image } from 'react-native'
 import React from 'react'
+import { ProductCardProps } from '../../../interfaces/types'
 
-interface ProductCardProps {
-    id: number,
-    title: string,
-    imageLink: any
-}
+
 const PopularProducts = () => {
 
     const popularProductsData = [

@@ -1,14 +1,7 @@
 import { View, Text, Image, TouchableOpacity, FlatList, Pressable } from 'react-native'
 import React from 'react'
 import { Star } from 'lucide-react-native'
-
-interface topWeekData {
-    id: number,
-    image: any,
-    title: string,
-    price: number
-}
-
+import { topWeekData } from '../../../interfaces/types'
 
 const TopOfWeek = () => {
     const data = [

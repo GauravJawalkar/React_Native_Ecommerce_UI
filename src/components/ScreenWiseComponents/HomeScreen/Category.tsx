@@ -1,11 +1,6 @@
 import { View, Text, Image, TouchableOpacity, FlatList } from 'react-native'
 import React from 'react'
-
-interface CategoryItem {
-    _id: number;
-    category: string;
-    imageLink: any;
-}
+import { CategoryItem } from '../../../interfaces/types';
 
 const Category = () => {
     const categories = [

@@ -13,7 +13,6 @@ import { ReactQueryProvider } from './lib/query/Provider';
 import { PersistGate } from 'redux-persist/integration/react';
 import BottomBarTab from './components/Navigation/BottomBarTab';
 
-
 export type RootStackParamList = {
   GetStartedScreen: undefined;
   LoginScreen: undefined;

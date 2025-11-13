@@ -14,7 +14,6 @@ import { CompositeScreenProps } from '@react-navigation/native'
 import PopularProducts from '../../components/ScreenWiseComponents/HomeScreen/PopularProducts'
 
 type CombinedProps = CompositeScreenProps<BottomTabScreenProps<BottomTabParamList, 'Home'>, NativeStackScreenProps<RootStackParamList>>;
-
 export type MainHomeProps = CombinedProps;
 
 const MainHome = ({ navigation }: MainHomeProps) => {

@@ -16,9 +16,13 @@ const authSlice = createSlice({
         login: (state, action) => {
             state.user = action.payload.user;
             state.isLoggedIn = action.payload.isLoggedIn
+        },
+        logout: (state, action) => {
+            state.user = { id: Math.random() * 1000, name: "", password: "" };
+            state.isLoggedIn = false;
         }
     }
 })
 
-export const { login } = authSlice.actions;
+export const { login, logout } = authSlice.actions;
 export default authSlice.reducer;
